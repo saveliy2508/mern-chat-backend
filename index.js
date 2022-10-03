@@ -30,8 +30,8 @@ app.post('/auth/login', loginValidation, UserController.login)
 app.get('/auth/me', checkAuth, UserController.getMe)
 
 
-// app.get('/messages', MessageController.getAll)
-// app.get('/messages/:id', MessageController.getOne)
+app.get('/messages', MessageController.getAll)
+app.get('/messages/:id', MessageController.getOne)
 app.post('/messages', checkAuth, messageCreateValidation, MessageController.send)
-// app.delete('/messages', MessageController.remove)
-// app.patch('/messages', MessageController.update)
+app.delete('/messages/:id', MessageController.remove)
+app.patch('/messages/:id', MessageController.update)
